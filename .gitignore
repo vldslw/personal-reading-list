@@ -5,7 +5,7 @@ AGENTS.md
 CLAUDE.md
 README-template.md
 preview.jpg
-data/README.md
+server/data/README.md
 
 # Dependencies
 node_modules/
