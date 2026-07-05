@@ -34,6 +34,7 @@ out/
 *.swp
 *.swo
 *~
+.prettierrc
 
 # OS
 .DS_Store
