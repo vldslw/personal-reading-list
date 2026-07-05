@@ -1,8 +1,8 @@
 import express from 'express';
-import type { Request, Response } from 'express';
 import cors from 'cors';
 import { env } from './config/env.js';
 import { connectToDatabase } from './config/db.js';
+import apiRoutes from './routes/index.js';
 
 const app = express();
 
@@ -14,9 +14,7 @@ connectToDatabase().catch((err) => {
 app.use(cors());
 app.use(express.json());
 
-app.get('/api/health', (req: Request, res: Response) => {
-  res.json({ status: 'ok', message: 'Bookshelf API is running' });
-});
+app.use('/api', apiRoutes);
 
 app.listen(env.port, () => {
   console.log(`Server is running on http://localhost:${env.port}`);
